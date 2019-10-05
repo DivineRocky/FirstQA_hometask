@@ -7,6 +7,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            RunTirdTask();
             RunSecondTask();
             RunFirstTask();
             Console.Read();
@@ -14,7 +15,7 @@ namespace ConsoleApp1
 
         private static void RunFirstTask()
         {
-            PrintHeader();
+            PrintHeader("FIRST TASK");
             int n = ReadIntParameterFromConsole("n");
             int m = ReadIntParameterFromConsole("m");
             int n1 = ReadIntParameterFromConsole("n1");
@@ -29,16 +30,9 @@ namespace ConsoleApp1
             PrintWait();
         }
 
-        private static void PrintHeader()
-        {
-            Console.Clear();
-            Console.WriteLine("FIRST TASK\n");
-        }
-
         private static void RunSecondTask()
         {
-            Console.Clear();
-            Console.WriteLine("SECOND TASK\n");
+            PrintHeader("SECOND TASK");
             var matrix = new int[] { 10, 5, 3, 4, 9 };
             Console.WriteLine("Original marix:");
             PrintIntMatrix(matrix);
@@ -48,6 +42,19 @@ namespace ConsoleApp1
             PrintIntMatrix(mirrorResult);
             var maxElementDistance = matrixTask.GetMaxElementDistance(matrix);
             Console.WriteLine($"Max element distance: {maxElementDistance}");
+            PrintWait();
+        }
+
+        private static void RunTirdTask()
+        {
+            PrintHeader("THIRD TASK");
+            var matrix = new int[,] { { 9, 2, 3 }, { 2, 3, 5 }, { 6, 7, 4 } };
+            Console.WriteLine("Original marix:");
+            PrintIntMatrix(matrix);
+            var matrixTask = new Matrix();
+            var mirrorResult = matrixTask.FillNotDiagonalWithOne(matrix);
+            Console.WriteLine("Mirrored matrix:");
+            PrintIntMatrix(mirrorResult);
             PrintWait();
         }
 
@@ -76,10 +83,28 @@ namespace ConsoleApp1
             Console.WriteLine();
         }
 
+        private static void PrintIntMatrix(int[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"{matrix[i,j]} ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        private static void PrintHeader(string title)
+        {
+            Console.Clear();
+            Console.WriteLine($"{title}\n");
+        }
+
         private static void PrintWait()
         {
             Console.WriteLine("Press any key to continue....");
-            Console.Read();
+            Console.ReadLine();
         }
     }
 }

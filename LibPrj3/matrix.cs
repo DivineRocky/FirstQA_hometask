@@ -17,6 +17,21 @@ namespace LibPrj3
             return arrayToMirror;
         }
 
+        public int[,] FillNotDiagonalWithOne(int[,] inputArray)
+        {
+            for (int i = 0; i < inputArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < inputArray.GetLength(1); j++)
+                {
+                    if (i != j)
+                    {
+                        inputArray[i, j] = 1;
+                    }
+                }
+            }
+            return inputArray;
+        }
+
         public int GetMaxElementDistance(int[] startArray)
         {
             var startArrayMaxElementIndex = GetMaxElementIndexFromBegining(startArray);
