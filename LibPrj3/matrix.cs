@@ -23,7 +23,11 @@ namespace LibPrj3
             {
                 for (int j = 0; j < inputArray.GetLength(1); j++)
                 {
-                    if (i != j)
+                    if (i > j)
+                    {
+                        inputArray[i, j] = 0;
+                    }
+                    if (i < j)
                     {
                         inputArray[i, j] = 1;
                     }

@@ -7,7 +7,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            RunTirdTask();
+            RunTrirdTask();
             RunSecondTask();
             RunFirstTask();
             Console.Read();
@@ -45,7 +45,7 @@ namespace ConsoleApp1
             PrintWait();
         }
 
-        private static void RunTirdTask()
+        private static void RunTrirdTask()
         {
             PrintHeader("THIRD TASK");
             var matrix = new int[,] { { 9, 2, 3 }, { 2, 3, 5 }, { 6, 7, 4 } };
