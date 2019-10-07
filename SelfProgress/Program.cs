@@ -17,9 +17,9 @@ namespace SelfProgress
             Console.WriteLine("Original marix:");
             PrintIntMatrix(matrix);
             var matrixTask = new SingleDimentionArray();
-            float average = matrixTask.ToCountArrayAverage(matrix);
+            float average = matrixTask.MultiplyArrayElements(matrix);
             Console.WriteLine($"Array Average:{average}");
-            int multiplication = matrixTask.ToCountArrayMultiplication(matrix);
+            int multiplication = matrixTask.MultiplyArrayElements(matrix);
             Console.WriteLine($"Array Multiplication:{multiplication}");
             PrintWait();
         }
