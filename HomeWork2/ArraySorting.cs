@@ -4,23 +4,41 @@ using System.Text;
 
 namespace HomeWork2
 {
-    public class ArraySorting
+    public class ArraySorting : IArraySorting
     {
         public int[] SortArray(int[] array, SortingOrder order)
         {
-            switch(order)
+            int[] arrayCopy = new int[array.Length];
+            array.CopyTo(arrayCopy, 0);
+            switch (order)
             {
                 case SortingOrder.Asc:
-                    return SortArrayAsc(array);
+                    return SortArrayAsc(arrayCopy);
 
                 case SortingOrder.Desc:
-                    return SortArrayDesc(array);
+                    return SortArrayDesc(arrayCopy);
             }
             throw new ArgumentException("Invalid argument");
         }
+
+        public bool ValidateArraySorting(int[] array, SortingOrder order)
+        {
+            int[] arrayCopy = new int[array.Length];
+            array.CopyTo(arrayCopy, 0);
+            switch (order)
+            {
+                case SortingOrder.Asc:
+                    return VerifySortedArrayAsc(arrayCopy);
+
+                case SortingOrder.Desc:
+                    return VerifySortedArrayDesc(arrayCopy);
+            }
+            throw new ArgumentException("Invalid argument");
+        }
+
         private int[] SortArrayAsc(int[] array)
         {
-            int temp;
+            int temp;     
             for (int i = 0; i < array.Length - 1; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
@@ -52,5 +70,34 @@ namespace HomeWork2
             }
             return array;
         }
+        private bool VerifySortedArrayAsc(int[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] > array[j])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        private bool VerifySortedArrayDesc(int[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] < array[j])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
+
 }

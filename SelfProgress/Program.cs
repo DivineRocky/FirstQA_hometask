@@ -8,6 +8,7 @@ namespace SelfProgress
         static void Main(string[] args)
         {
             RunArraySorting();
+            RunArraySortingVerification();
             //RunSingleDimentionArray();
             Console.Read();
         }
@@ -39,6 +40,21 @@ namespace SelfProgress
             int[] descSortedArray = masTask.SortArray(mas, SortingOrder.Desc);
             Console.WriteLine($"Sorted by Desc");
             PrintIntMatrix(descSortedArray);
+            PrintWait();
+        }
+        private static void RunArraySortingVerification()
+        {
+            PrintHeader("Sorting Array Verification");
+            int[] mas = new int[] { 10, 5, 3, 4, 9 };
+            Console.WriteLine("Original mas:");
+            PrintIntMatrix(mas);
+            var masTask = new ArraySorting();
+            int[] ascSortedArray = masTask.SortArray(mas, SortingOrder.Asc);         
+            int[] descSortedArray = masTask.SortArray(mas, SortingOrder.Desc);
+            bool VerifySortedArrayAsc = masTask.ValidateArraySorting(ascSortedArray, SortingOrder.Asc);
+            Console.WriteLine($"Sorted by Asc:{VerifySortedArrayAsc}");
+            bool VerifySortedArrayDesc = masTask.ValidateArraySorting(descSortedArray, SortingOrder.Desc);
+            Console.WriteLine($"Sorted by Desc:{VerifySortedArrayDesc}");
             PrintWait();
         }
 
