@@ -1,4 +1,5 @@
 ﻿using System;
+using ThirdTask;
 
 namespace SelfProgress
 {
@@ -6,8 +7,21 @@ namespace SelfProgress
     {
         static void Main(string[] args)
         {
-            RunSingleDimentionArray();
+            RunSecondProgression();
+            //RunSingleDimentionArray();
             Console.Read();
+        }
+
+        private static void RunSecondProgression()
+        {
+            PrintHeader("Reversal Progression");
+            var a1 = ReadDoubleParameterFromConsole("a1");
+            var t = ReadDoubleParameterFromConsole("t");
+            var alim = ReadDoubleParameterFromConsole("alim");
+            var progression = new Progressions();
+            var multiplyResult = progression.MultiplyReversalProgression(a1, t, alim);
+            Console.WriteLine($"multiply result: {multiplyResult}");
+            PrintWait();
         }
 
         private static void RunSingleDimentionArray()
@@ -43,5 +57,20 @@ namespace SelfProgress
             Console.ReadLine();
         }
 
+        private static double ReadDoubleParameterFromConsole(string parameterName)
+        {
+            Console.Write($"Enter {parameterName}: ");
+            string input = Console.ReadLine();
+            try
+            {
+                double digit = Convert.ToDouble(input);
+                return digit;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Wrong input");
+                return ReadDoubleParameterFromConsole(parameterName);
+            }
+        }
     }
 }
