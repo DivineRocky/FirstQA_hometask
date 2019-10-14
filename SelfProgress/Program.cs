@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeWork2;
+using System;
 using ThirdTask;
 
 namespace SelfProgress
@@ -7,7 +8,8 @@ namespace SelfProgress
     {
         static void Main(string[] args)
         {
-            RunSecondProgression();
+            RunArraySorting();
+            RunArraySortingVerification();
             //RunSingleDimentionArray();
             Console.Read();
         }
@@ -28,11 +30,44 @@ namespace SelfProgress
         {
             PrintHeader("Single Dimention Array");
             int [] matrix = new int[] { 10, 5, 3, 4, 9 };
-            Console.WriteLine("Original marix:");
+            Console.WriteLine("Original matrix:");
             PrintIntMatrix(matrix);
             var matrixTask = new SingleDimentionArray();
-            float average = matrixTask.ToCountArrayAverage(matrix);
+            float average = matrixTask.MultiplyArrayElements(matrix);
             Console.WriteLine($"Array Average:{average}");
+            int multiplication = matrixTask.MultiplyArrayElements(matrix);
+            Console.WriteLine($"Array Multiplication:{multiplication}");
+            PrintWait();
+        }
+
+        private static void RunArraySorting()
+        {
+            PrintHeader("Sorting Array");
+            int[] mas = new int[] { 10, 5, 3, 4, 9 };
+            Console.WriteLine("Original mas:");
+            PrintIntMatrix(mas);
+            var masTask = new ArraySorting();
+            int [] ascSortedArray = masTask.SortArray(mas, SortingOrder.Asc);
+            Console.WriteLine($"Sorted by Asc");
+            PrintIntMatrix(ascSortedArray);
+            int[] descSortedArray = masTask.SortArray(mas, SortingOrder.Desc);
+            Console.WriteLine($"Sorted by Desc");
+            PrintIntMatrix(descSortedArray);
+            PrintWait();
+        }
+        private static void RunArraySortingVerification()
+        {
+            PrintHeader("Sorting Array Verification");
+            int[] mas = new int[] { 10, 5, 3, 4, 9 };
+            Console.WriteLine("Original mas:");
+            PrintIntMatrix(mas);
+            var masTask = new ArraySorting();
+            int[] ascSortedArray = masTask.SortArray(mas, SortingOrder.Asc);         
+            int[] descSortedArray = masTask.SortArray(mas, SortingOrder.Desc);
+            bool VerifySortedArrayAsc = masTask.ValidateArraySorting(ascSortedArray, SortingOrder.Asc);
+            Console.WriteLine($"Sorted by Asc:{VerifySortedArrayAsc}");
+            bool VerifySortedArrayDesc = masTask.ValidateArraySorting(descSortedArray, SortingOrder.Desc);
+            Console.WriteLine($"Sorted by Desc:{VerifySortedArrayDesc}");
             PrintWait();
         }
 

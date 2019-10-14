@@ -16,9 +16,17 @@ namespace SelfProgress
             }
             return (float) sum / amount;
         }
-        
+
+        public int MultiplyArrayElements(int[] inputArray)
+        {
+            int multiplication = 1;
+            foreach(int item in inputArray)
+            {
+                multiplication = multiplication * item;
+            }
+            return multiplication;
+        }
 
     }
-   
 
 }
