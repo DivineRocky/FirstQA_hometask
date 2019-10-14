@@ -8,8 +8,9 @@ namespace SelfProgress
     {
         static void Main(string[] args)
         {
-            RunArraySorting();
-            RunArraySortingVerification();
+            RunFirstProgression ();
+            //RunArraySorting();
+            //RunArraySortingVerification();
             //RunSingleDimentionArray();
             Console.Read();
         }
@@ -22,6 +23,17 @@ namespace SelfProgress
             var alim = ReadDoubleParameterFromConsole("alim");
             var progression = new Progressions();
             var multiplyResult = progression.MultiplyReversalProgression(a1, t, alim);
+            Console.WriteLine($"multiply result: {multiplyResult}");
+            PrintWait();
+        }
+        private static void RunFirstProgression()
+        {
+            PrintHeader("Arithmetic Progression");
+            var a1 = ReadDoubleParameterFromConsole("a1");
+            var t = ReadDoubleParameterFromConsole("t");
+            var n = ReadDoubleParameterFromConsole("n");
+            var progression = new Progressions();
+            var multiplyResult = progression.MultiplyArithmeticProgression(a1, t, n);
             Console.WriteLine($"multiply result: {multiplyResult}");
             PrintWait();
         }

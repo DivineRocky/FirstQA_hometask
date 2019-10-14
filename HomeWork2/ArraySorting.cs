@@ -53,6 +53,7 @@ namespace HomeWork2
             }
             return array;
         }
+
         private int[] SortArrayDesc(int[] array)
         {
             int temp;
@@ -70,6 +71,7 @@ namespace HomeWork2
             }
             return array;
         }
+
         private bool VerifySortedArrayAsc(int[] array)
         {
             for (int i = 0; i < array.Length - 1; i++)
@@ -84,6 +86,7 @@ namespace HomeWork2
             }
             return true;
         }
+
         private bool VerifySortedArrayDesc(int[] array)
         {
             for (int i = 0; i < array.Length - 1; i++)
