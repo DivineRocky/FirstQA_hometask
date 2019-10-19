@@ -1,4 +1,5 @@
 ﻿using HomeWork2;
+using HWSquare;
 using System;
 using ThirdTask;
 
@@ -8,13 +9,16 @@ namespace SelfProgress
     {
         static void Main(string[] args)
         {
-            RunFirstProgression ();
+            RunArithmeticProgression();
+            //RunSquare();
+            //RunFirstProgression ();
             //RunArraySorting();
             //RunArraySortingVerification();
             //RunSingleDimentionArray();
             Console.Read();
         }
 
+        #region progression
         private static void RunSecondProgression()
         {
             PrintHeader("Reversal Progression");
@@ -26,6 +30,7 @@ namespace SelfProgress
             Console.WriteLine($"multiply result: {multiplyResult}");
             PrintWait();
         }
+
         private static void RunFirstProgression()
         {
             PrintHeader("Arithmetic Progression");
@@ -37,7 +42,9 @@ namespace SelfProgress
             Console.WriteLine($"multiply result: {multiplyResult}");
             PrintWait();
         }
+        #endregion
 
+        #region Arrays
         private static void RunSingleDimentionArray()
         {
             PrintHeader("Single Dimention Array");
@@ -67,6 +74,7 @@ namespace SelfProgress
             PrintIntMatrix(descSortedArray);
             PrintWait();
         }
+
         private static void RunArraySortingVerification()
         {
             PrintHeader("Sorting Array Verification");
@@ -80,6 +88,35 @@ namespace SelfProgress
             Console.WriteLine($"Sorted by Asc:{VerifySortedArrayAsc}");
             bool VerifySortedArrayDesc = masTask.ValidateArraySorting(descSortedArray, SortingOrder.Desc);
             Console.WriteLine($"Sorted by Desc:{VerifySortedArrayDesc}");
+            PrintWait();
+        }
+        #endregion
+
+        private static void RunSquare()
+        {
+            PrintHeader("Square Operations");
+            var sideLength = ReadDoubleParameterFromConsole("side length");
+            var square = new Square(sideLength);
+            var perimeter = square.CalculateSquarePerimeter();
+            Console.WriteLine($"Square Perimater: {perimeter}");
+            var squareSquare = square.CalculateSquareOfSquare();
+            Console.WriteLine($"Square is: {squareSquare}");
+            PrintWait();
+        }
+
+        private static void RunArithmeticProgression()
+        {
+            PrintHeader("Arithmetic Progression Operations");
+            var startPoint = ReadDoubleParameterFromConsole("startPoint");
+            var step = ReadDoubleParameterFromConsole("step");
+            var numberOfElements = ReadDoubleParameterFromConsole("n");
+            var progression = new ArithmeticProgression(startPoint, step);
+            var certainElement = progression.FindNElementOfProgression(numberOfElements);
+            Console.WriteLine($"N element of progression is: {certainElement}");
+            var sumOfFirstNElements = progression.FindSumOfFirstNElements(numberOfElements);
+            Console.WriteLine($"Sum of first n elements is: {sumOfFirstNElements}");
+            var averageOfFirstNElements = progression.FindAverageOfFirstNElements(numberOfElements);
+            Console.WriteLine($"Average of first n elements is: {averageOfFirstNElements}");
             PrintWait();
         }
 
