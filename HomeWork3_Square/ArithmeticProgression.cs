@@ -31,14 +31,8 @@
 
         public double FindAverageOfFirstNElements(double n)
         {
-            double sum = _a1, amount = n, previousA = _a1;
-            for (int i = 1; i < n; i++)
-            {
-                var currentA = previousA + (n - 1) * _d;
-                previousA = currentA;
-                sum += currentA;
-            }
-            return sum / amount;
+            var sumOfFirstNelements = FindSumOfFirstNElements(n);
+            return sumOfFirstNelements / n;
         }
     }
 }
