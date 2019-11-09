@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HomeWork3_Square\HWSquare.csproj" />
+    <ProjectReference Include="..\ThirdTask\ThirdTask.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HomeWork2\HomeWork2.csproj" />
   </ItemGroup>
 
