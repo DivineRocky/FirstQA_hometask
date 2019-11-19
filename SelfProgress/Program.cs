@@ -9,14 +9,24 @@ namespace SelfProgress
     {
         static void Main(string[] args)
         {
-            RunArithmeticProgression();
+            //RunArithmeticProgression();
             //RunSquare();
             //RunFirstProgression ();
             //RunArraySorting();
             //RunArraySortingVerification();
             //RunSingleDimentionArray();
+            RunShapeSample();
             Console.Read();
         }
+
+        #region Shapes
+        private static void RunShapeSample()
+        {
+            var squre = new InheritanceAndInterfaces.Shapes.Square(5);
+            Console.WriteLine(squre.GetArea());
+            Console.WriteLine(squre.GetName());
+        }
+        #endregion
 
         #region progression
         private static void RunSecondProgression()

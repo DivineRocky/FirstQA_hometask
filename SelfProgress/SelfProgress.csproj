@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HomeWork3_Square\HWSquare.csproj" />
+    <ProjectReference Include="..\InheritanceAndInterfaces\InheritanceAndInterfaces.csproj" />
     <ProjectReference Include="..\ThirdTask\ThirdTask.csproj" />
   </ItemGroup>
 

@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdTask", "ThirdTask\Thir
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork2", "HomeWork2\HomeWork2.csproj", "{F55B9D9E-FC39-4399-B362-6FD71AF70BF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWSquare", "HomeWork3_Square\HWSquare.csproj", "{D5689327-E7A3-4244-AD52-2DDE8A34210B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWSquare", "HomeWork3_Square\HWSquare.csproj", "{D5689327-E7A3-4244-AD52-2DDE8A34210B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftArrayTests", "ShiftArrayTests\ShiftArrayTests.csproj", "{8A97D949-8687-49AE-AD14-8AD4F2AE1EF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceAndInterfaces", "InheritanceAndInterfaces\InheritanceAndInterfaces.csproj", "{8D87AFB5-D837-48D0-A73D-3D49C3262DB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{D5689327-E7A3-4244-AD52-2DDE8A34210B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5689327-E7A3-4244-AD52-2DDE8A34210B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5689327-E7A3-4244-AD52-2DDE8A34210B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A97D949-8687-49AE-AD14-8AD4F2AE1EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A97D949-8687-49AE-AD14-8AD4F2AE1EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A97D949-8687-49AE-AD14-8AD4F2AE1EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A97D949-8687-49AE-AD14-8AD4F2AE1EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D87AFB5-D837-48D0-A73D-3D49C3262DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D87AFB5-D837-48D0-A73D-3D49C3262DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D87AFB5-D837-48D0-A73D-3D49C3262DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D87AFB5-D837-48D0-A73D-3D49C3262DB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
