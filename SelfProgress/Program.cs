@@ -1,7 +1,10 @@
 ﻿using HomeWork2;
 using HWSquare;
+using InheritanceAndInterfaces.AnimalInheritance;
 using System;
+using System.Collections.Generic;
 using ThirdTask;
+using System.Linq;
 
 namespace SelfProgress
 {
@@ -15,9 +18,34 @@ namespace SelfProgress
             //RunArraySorting();
             //RunArraySortingVerification();
             //RunSingleDimentionArray();
-            RunShapeSample();
-            Console.Read();
+            //RunShapeSample();
+            //Console.Read();
+            CountAnimals();
+
         }
+        public static void CountAnimals()
+        {
+            List<Animal> Animals;
+            Animals = new List<Animal>();
+            Animals.Add(new Wolf("Pasha"));
+            Animals.Add(new Fox("Masha"));
+            Animals.Add(new Rabbit("Sasha"));
+            Animals.Add(new Deer("Dasha"));
+            Animals.Add(new Deer("Glasha"));
+            int predatorsCount = GetPredatorQuantity(Animals);
+            int herbivoreCount = GetHerbivoreQuantity(Animals);
+        }
+        public static int GetPredatorQuantity(List<Animal> animals)
+        {
+            int predatorsQuantity = animals.Count(animal => animal.GetType().BaseType == typeof(Predator));
+            return predatorsQuantity;
+        }
+        public static int GetHerbivoreQuantity(List<Animal> animals)
+        {
+            int herbivoreQuantity = animals.Count(animal => animal.GetType().BaseType == typeof(Herbivore));
+            return herbivoreQuantity;
+        }
+
 
         #region Shapes
         private static void RunShapeSample()
